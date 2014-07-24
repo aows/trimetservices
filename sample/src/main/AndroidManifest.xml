@@ -19,7 +19,7 @@
 
         <meta-data
             android:name="TRIMET_APP_ID"
-            android:value="75B2C29739787645EC69E019D" />
+            android:value="your_app_id" />
     </application>
 
 </manifest>
