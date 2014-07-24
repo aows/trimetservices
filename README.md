@@ -92,3 +92,7 @@ TrimetRouteConfig.get().getRoute(100);
 // get times for a stop
 TrimetArrivals.get().getArrivals("1793");
 ```
+
+## More info
+
+[https://medium.com/@aows/trimet-services-open-source-library-for-android-1023cd6808e1](https://medium.com/@aows/trimet-services-open-source-library-for-android-1023cd6808e1)
