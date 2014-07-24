@@ -61,7 +61,7 @@ protected void onDestroy() {
 }
 ```
 
-On the `onResume` method we register the activity  as the subscriber, and on the `onDestroy` method we have to unregister it.
+On the `onCreate` method we register the activity  as the subscriber, and on the `onDestroy` method we have to unregister it.
 
 To get the results, we have to add a new method (we can name it as we want) with the `@Subscribe` annotation so we get the result there.
 
