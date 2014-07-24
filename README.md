@@ -66,7 +66,6 @@ To get the results, we have to add a new method (we can name it as we want) with
 ```
 @Subscribe
 public void onLinesAvailable(RouteConfigResult result) {
-    mPD.hide();
     for (PBRoute pbRoute : result.getRoutes()) {
         mAdapter.add(pbRoute.getDescription());
     }
@@ -74,7 +73,7 @@ public void onLinesAvailable(RouteConfigResult result) {
 }
 ```
 
-## Supported request
+## Supported methods
 
 This library supports `RouteConfig` and `Arrivals` out of the box. This means we can get all the lines, their stops with all their info, and the buses times for those stops.
 
