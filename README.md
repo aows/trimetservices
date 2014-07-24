@@ -12,7 +12,7 @@ Copy the library folder to your project and add this line to your gradle build f
 compile project(':trimetservices')
 ```
 
-# Configuration
+## Configuration
 
 You need to add the following line to your `AndroidManifest.xml` file:
 
@@ -25,7 +25,7 @@ You need to add the following line to your `AndroidManifest.xml` file:
 Of course, you have to add your App ID (you can get it) from Trimet developers site.
 
 
-# Using it
+## Using it
 
 I've included a sample app. But it's really easy to use. First of all, we need to initialize the `TrimetServices`:
 
@@ -79,7 +79,7 @@ public void onLinesAvailable(RouteConfigResult result) {
 This library supports `RouteConfig` and `Arrivals` out of the box. This means we can get all the lines, their stops with all their info, and the buses times for those stops.
 
 
-### Examples
+## Examples
 
 ```
 // get all the routes
