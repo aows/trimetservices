@@ -43,23 +43,25 @@ Once we have this service initialized, and since this library uses [Otto](http:/
 
 ```
 @Override
-protected void onResume() {
-    super.onResume();
-
+protected void onCreate(Bundle savedInstanceState) {
+    // ...
+    
+    // init trimet services
+    TrimetServices.init(this);
     // request lines and set this activity as the event handler
     TrimetRouteConfig.get().register(this).getAllRoutes();
 }
 
 @Override
 protected void onDestroy() {
-    super.onDestroy();
-
     // unregister the activity as a handler
     TrimetRouteConfig.get().unregister(this);
+    
+    super.onDestroy();
 }
 ```
 
-On the `onResume` method we register the activity  as the subscriber, and on the `onDestroy` method we have to unregister it. This way, if the activity gets destroyed we won't be keeping a reference to it and it will be _garbage collected_. As soon as the user comes back to the activity and a new instance is created, thanks to the `register` command on the `onResume` method, this new activity will get the response from the Trimet web services.
+On the `onResume` method we register the activity  as the subscriber, and on the `onDestroy` method we have to unregister it.
 
 To get the results, we have to add a new method (we can name it as we want) with the `@Subscribe` annotation so we get the result there.
 
