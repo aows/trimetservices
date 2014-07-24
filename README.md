@@ -1,12 +1,12 @@
 TrimetServices for Android
 ==========================
 
-Trimet Services is a simple and easy to use library to use Portland's [Trimet's web services](http://developer.trimet.org). I'll be improving it in the future, for now it's just a small fraction of what I'm using on [Portland Bus app](play.google.com/store/apps/details?id=ws.otero.adrian.portlandbus).
+Trimet Services is a simple and easy to use library to use Portland's [Trimet's web services](http://developer.trimet.org). I'll be improving it in the future, for now it's just a small fraction of what I'm using on [Portland Bus app](http://play.google.com/store/apps/details?id=ws.otero.adrian.portlandbus).
 
 
 ## Include it in your project
 
-Copy it and add this line to your gradle build file:
+Copy the library folder to your project and add this line to your gradle build file:
 
 ```
 compile project(':trimetservices')
@@ -22,7 +22,7 @@ You need to add the following line to your `AndroidManifest.xml` file:
    android:value="your_app_id" />
 ```
 
-Of course, you have to add your App ID you can get from Trimet developers site.
+Of course, you have to add your App ID (you can get it) from Trimet developers site.
 
 
 # Using it
@@ -35,7 +35,7 @@ TrimetServices.init(context);
 
 // ...
 
-// or we pass it directly
+// or we can pass it directly
 TrimetServices.init("my_app_id");
 ```
 
@@ -59,7 +59,7 @@ protected void onDestroy() {
 }
 ```
 
-On the `onResume` method we register the activity  as the subscriber, and on the `onDestroy` method we have to unregister it. This way, if the activity gets destroyed we won't be keeping a reference to it and it will be garbaged out. As soon as the user comes back to the activity and a new instance is created, thanks to the `register` command on the `onResume` method, we register the new activity and it will get the response from the Trimet web services.
+On the `onResume` method we register the activity  as the subscriber, and on the `onDestroy` method we have to unregister it. This way, if the activity gets destroyed we won't be keeping a reference to it and it will be _garbage collected_. As soon as the user comes back to the activity and a new instance is created, thanks to the `register` command on the `onResume` method, this new activity will get the response from the Trimet web services.
 
 To get the results, we have to add a new method (we can name it as we want) with the `@Subscribe` annotation so we get the result there.
 
@@ -76,7 +76,7 @@ public void onLinesAvailable(RouteConfigResult result) {
 
 ## Supported request
 
-Right now out of the box, this library supports `RouteConfig` and `Arrivals`. This means we can get all the lines, their stops with all their info, and the buses times for those stops.
+This library supports `RouteConfig` and `Arrivals` out of the box. This means we can get all the lines, their stops with all their info, and the buses times for those stops.
 
 
 ### Examples
